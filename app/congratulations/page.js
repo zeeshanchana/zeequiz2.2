@@ -1,8 +1,9 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Congratulations() {
+function CongratulationsContent() {
   const searchParams = useSearchParams();
   const score = searchParams.get("score");
   const router = useRouter();
@@ -19,5 +20,13 @@ export default function Congratulations() {
         Go to Home
       </button>
     </div>
+  );
+}
+
+export default function Congratulations() {
+  return (
+    <Suspense fallback={<p className="text-center text-gray-500">Loading...</p>}>
+      <CongratulationsContent />
+    </Suspense>
   );
 }
