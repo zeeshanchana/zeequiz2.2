@@ -110,8 +110,8 @@ export default    function Component({ classId, subject, chapter }) {
           {questions[currentQuestionIndex].options.map((option, index) => (
             <button
               key={index}
-              className={`px-4 py-2 rounded-md border hover:bg-blue-500 ${
-                selectedAnswer === option ? "bg-blue-500 text-white" : "bg-gray-200"
+              className={`px-4 py-2 rounded-md border ${
+                selectedAnswer === option ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-blue-500"
               }`}
               onClick={() => setSelectedAnswer(option)}
             >
